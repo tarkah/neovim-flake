@@ -9,6 +9,11 @@
       url = "github:Shatur/neovim-session-manager";
       flake = false;
     };
+
+    rust-tools-nvim = {
+      url = "github:simrat39/rust-tools.nvim";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }@inputs:
@@ -51,7 +56,7 @@
             config' = if config != null then config else buildConfig name;
             plugin = with pkgs; with builtins;
               if name == "nvim-treesitter" then pkgs.vimPlugins.nvim-treesitter.withAllGrammars
-              else if hasAttr name vimPlugins then getAttr name vimPlugins else buildPlugin name;
+              else if hasAttr name inputs then buildPlugin name else getAttr name vimPlugins;
           in
           {
             inherit plugin optional;
