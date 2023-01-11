@@ -50,9 +50,10 @@
   require'lspconfig'.dartls.setup{
       cmd = { "${pkgs.dart}/bin/dart" , "language-server", "--protocol=lsp" }
   }
-  require'lspconfig'.hls.setup{
-      cmd = { "${pkgs.haskell-language-server}/bin/haskell-language-server-wrapper", "--lsp" }
-  }
+-- https://github.com/NixOS/nixpkgs/issues/140774
+--  require'lspconfig'.hls.setup{
+--      cmd = { "pkgs.haskell-language-server/bin/haskell-language-server-wrapper", "--lsp" }
+--  }
   require'lspconfig'.nil_ls.setup{
       cmd = {"${pkgs.nil}/bin/nil"}
   }
