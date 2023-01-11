@@ -147,13 +147,16 @@
             inherit plugins;
 
             customRC = ''
+              ${readLuaConfig ./init.lua}
+
               " Only load plugins provided by this flake
               set noloadplugins
               set packpath=${packPath}
-              runtime! START plugin/**/*.vim
-              runtime! START plugin/**/*.lua
-
-              ${readLuaConfig ./init.lua}
+              set runtimepath=${packPath},${pkgs.neovim-unwrapped}/lib/nvim
+              runtime! plugin/**/*.vim
+              runtime! plugin/**/*.lua
+              set runtimepath&
+              set runtimepath^=${packPath},${pkgs.neovim-unwrapped}/lib/nvim
             '';
           };
 
