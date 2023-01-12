@@ -1,6 +1,7 @@
-{ callPackage
+{ lib
+, callPackage
 , settings ? { }
 , ...
 }:
 
-callPackage ./builder.nix { settings = (import ./settings.nix // settings); }
+callPackage ./builder.nix { settings = lib.recursiveUpdate (import ./settings.nix) settings; }

@@ -7,14 +7,7 @@
   rust = {
     enable = true;
     # TODO: Define as list and serialize to lua
-    rustfmt.extraArgs = ''
-      {
-          "--config",
-          "imports_granularity=Module",
-          "--config",
-          "group_imports=StdExternalCrate",
-      }
-    '';
+    rustfmt.extraArgs = "{}";
     checkOnSave.overrideCommand = ''
       {
           "cargo",
