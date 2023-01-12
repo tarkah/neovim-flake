@@ -49,8 +49,16 @@
           default = neovim;
         };
 
-        overlays.default = f: p: {
-          inherit neovim;
+        overlays = {
+          default = f: p: {
+            inherit neovim;
+          };
+
+          withSettings = settings: f: p: {
+            neovim = neovim.override {
+              inherit settings;
+            };
+          };
         };
       }
     );
