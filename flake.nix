@@ -14,6 +14,11 @@
       url = "github:simrat39/rust-tools.nvim";
       flake = false;
     };
+ 
+    lualine-nvim = {
+      url = "github:nvim-lualine/lualine.nvim";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }@inputs:

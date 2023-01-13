@@ -15,6 +15,22 @@
         "type": "github"
       }
     },
+    "lualine-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673418538,
+        "narHash": "sha256-3I9og+/lVRFJSpDVFwp2AM5bMqeP1KF8XB8Nyfpwhok=",
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
+        "rev": "0050b308552e45f7128f399886c86afefc3eb988",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
+        "type": "github"
+      }
+    },
     "neovim-session-manager": {
       "flake": false,
       "locked": {
@@ -50,6 +66,7 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "lualine-nvim": "lualine-nvim",
         "neovim-session-manager": "neovim-session-manager",
         "nixpkgs": "nixpkgs",
         "rust-tools-nvim": "rust-tools-nvim"
