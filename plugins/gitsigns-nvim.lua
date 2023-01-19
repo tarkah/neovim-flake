@@ -1,5 +1,5 @@
 require('gitsigns').setup {
-    linehl = true,
+    linehl = false,
     numhl = true,
-    word_diff = true,
+    word_diff = false,
 }
