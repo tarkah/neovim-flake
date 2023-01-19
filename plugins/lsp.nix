@@ -71,6 +71,11 @@
                   checkOnSave = {
                       overrideCommand = ${settings.rust.checkOnSave.overrideCommand},
                   },
+                  diagnostics = {
+                      disabled = {
+                         "inactive-code",
+                      },
+                  },
               }
           }
       },
