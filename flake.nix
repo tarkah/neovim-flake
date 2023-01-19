@@ -19,6 +19,16 @@
       url = "github:nvim-lualine/lualine.nvim";
       flake = false;
     };
+
+    diffview-nvim = {
+      url = "github:tarkah/diffview.nvim/feat/inline-diff";
+      flake = false;
+    };
+
+    gitsigns-nvim = {
+      url = "github:sindrets/gitsigns.nvim/feat/general-attach";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }@inputs:

@@ -101,6 +101,7 @@ let
     # Git
     { name = "vim-fugitive"; }
     { name = "diffview-nvim"; }
+    { name = "gitsigns-nvim"; }
 
     # Dashboard
     { name = "alpha-nvim"; }
