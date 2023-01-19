@@ -8,9 +8,7 @@ require("diffview").setup({
         },
     },
     default_args = {
-        DiffviewOpen = {
-            "--cached",
-        },
+        DiffviewOpen = {},
         DiffviewFileHistory = {},
     },
 })

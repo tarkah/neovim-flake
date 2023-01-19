@@ -63,7 +63,7 @@ let
     # Theme
     # { name = "gruvbox-material"; config = readConfig ./plugins/colorscheme.lua; }
     # { name = "dracula-nvim"; config = readConfig ./plugins/colorscheme.lua; }
-    { name = "nord-nvim"; config = readLuaConfig ./../plugins/colorscheme.lua; }
+    { name = "nord-nvim"; }
 
     # Completions
     { name = "nvim-cmp"; }
