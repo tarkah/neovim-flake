@@ -17,7 +17,8 @@ wk.register({
     w = { "<cmd>w!<CR>", "save" },
     l = {
         name = "lsp",
-        f = { [[<cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name ~= "tsserver" end })<cr>]], "format" },
+        f = { [[<cmd>lua vim.lsp.buf.format({ filter = function(client) return client.name ~= "tsserver" end })<cr>]],
+            "format" },
         r = { "<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", "references" },
         d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "definition" },
         R = { "<cmd>lua vim.lsp.buf.rename()<CR>", "rename" },
@@ -54,7 +55,11 @@ wk.register({
         name = "git",
         s = { "<cmd>lua require'telescope.builtin'.git_status{}<CR>", "status" },
         c = { "<cmd>lua require'telescope.builtin'.git_commits{}<CR>", "commits" },
-        d = { "<cmd>DiffviewOpen -uno<cr>", "diffsplit" }
+        d = { "<cmd>DiffviewOpen -uno<cr>", "diffview-split" },
+        f = { "<cmd>DiffviewFileHistory<cr>", "diffview-files" },
+        q = { "<cmd>DiffviewClose<cr>", "diffview-close" },
+        n = { "<cmd>Gitsigns next_hunk<cr>", "next hunk" },
+        p = { "<cmd>Gitsigns prev_hunk<cr>", "prev hunk" },
     },
     p = {
         name = "packer",
