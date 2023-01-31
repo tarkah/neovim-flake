@@ -104,6 +104,7 @@
 
     # Status line
     {name = "lualine-nvim";}
+    {name = "lualine-lsp-progress";}
 
     # Explorer
     {name = "nvim-tree-lua";}
