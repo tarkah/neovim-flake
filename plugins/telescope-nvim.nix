@@ -1,6 +1,4 @@
-{ ripgrep, ... }:
-
-''
+{ripgrep, ...}: ''
   require("telescope").setup {
     defaults = {
         vimgrep_arguments = {

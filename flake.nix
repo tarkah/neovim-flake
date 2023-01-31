@@ -14,7 +14,7 @@
       url = "github:simrat39/rust-tools.nvim";
       flake = false;
     };
- 
+
     lualine-nvim = {
       url = "github:nvim-lualine/lualine.nvim";
       flake = false;
@@ -31,9 +31,14 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
         pkgs = import nixpkgs {
           inherit system;
 
@@ -41,15 +46,17 @@
             (_: _: {
               inherit inputs;
 
-              writeIf = cond: msg: if cond then msg else "";
+              writeIf = cond: msg:
+                if cond
+                then msg
+                else "";
             })
           ];
         };
 
-        neovim = pkgs.callPackage ./neovim/default.nix { };
-      in
-      rec {
-        formatter = pkgs.nixpkgs-fmt;
+        neovim = pkgs.callPackage ./neovim/default.nix {};
+      in rec {
+        formatter = pkgs.alejandra;
 
         apps = rec {
           nvim = {
