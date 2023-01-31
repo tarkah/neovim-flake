@@ -15,13 +15,8 @@
       flake = false;
     };
 
-    lualine-nvim = {
-      url = "github:nvim-lualine/lualine.nvim";
-      flake = false;
-    };
-
     diffview-nvim = {
-      url = "github:tarkah/diffview.nvim/feat/inline-diff";
+      url = "github:sindrets/diffview.nvim/feat/inline-diff";
       flake = false;
     };
 
