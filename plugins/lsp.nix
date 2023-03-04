@@ -5,7 +5,7 @@
   nil,
   haskell-language-server,
   rust-analyzer,
-  sumneko-lua-language-server,
+  lua-language-server,
   writeIf,
   settings,
   ...
@@ -95,8 +95,8 @@
     table.insert(runtime_path, "lua/?.lua")
     table.insert(runtime_path, "lua/?/init.lua")
 
-    require 'lspconfig'.sumneko_lua.setup {
-        cmd = {"${sumneko-lua-language-server}/bin/lua-language-server"},
+    require 'lspconfig'.lua_ls.setup {
+        cmd = {"${lua-language-server}/bin/lua-language-server"},
         settings = {
             Lua = {
                 runtime = {
